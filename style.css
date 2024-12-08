@@ -1,0 +1,144 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(https://files.oaiusercontent.com/file-J3HeaBT7o9ThDMTcjqMxM9?se=2024-12-08T09%3A03%3A08Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D2dba645a-06d1-4896-841a-203aba2595ec.webp&sig=OELQZ5C/YZYQldRJeIBmFRpvNBViN8wPeRXMFK4Q6gM%3D);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    opacity: 1;
+    animation: fadeIn 1s forwards;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.trailer-video {
+    position: absolute;
+    bottom: 52vh;
+    right: 2vw;
+    width: 19vw;
+    height: 22vh;
+    border: .1px solid rgb(16, 0, 104);
+    border-radius: 5px;
+    background-color: black;
+}
+
+.trailer-video-2 {
+    position: absolute;
+    bottom: 52vh;
+    right: 2vw;
+    width: 19vw;
+    height: 22vh;
+    border: .1px solid rgb(16, 0, 104);
+    border-radius: 5px;
+    background-color: black;
+}
+.details {
+    margin-top: 20px;
+    display: flex;
+    gap: 5%;
+}
+
+.poster img {
+    margin-left: 10%;
+    width: 12rem;
+    border-radius: 10px;
+}
+
+.poster img:hover {
+    cursor: pointer;
+    transform: scale(1);
+    filter: brightness(0.9);
+}
+
+h1 span:hover {
+    color: #FFD700;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.info {
+    max-width: 80%;
+}
+
+.info h1 {
+    margin: 0;
+}
+
+.info .rating {
+    margin: 10px 0;
+}
+
+.info p {
+    line-height: 1.6;
+    word-wrap: break-word;
+    line-height: 1.6;
+    text-align: justify;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cast {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.cast h2 {
+    margin-bottom: 10px;
+}
+
+.cast-list {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cast-member {
+    text-align: center;
+}
+
+.cast-member img {
+    width: 5rem;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.cast-member img:hover {
+    border: 1px solid #FFD700;
+    transform: scale(1);
+}
+
+.cast-member p {
+    margin-top: 5px;
+    font-size: 14px;
+}

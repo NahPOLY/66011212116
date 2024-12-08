@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .corner-video {
+    position: absolute;
+    bottom: 20px; /* ระยะห่างจากขอบล่าง */
+    right: 20px; /* ระยะห่างจากขอบขวา */
+    width: 300px; /* ความกว้างของวิดีโอ */
+    height: 200px; /* ความสูงของวิดีโอ */
+    object-fit: cover;
+    border: 2px solid white; /* เส้นขอบ */
+    border-radius: 10px; /* ขอบโค้งมน */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* เงา */
+  }
+  
