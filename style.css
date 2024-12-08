@@ -1,9 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     background-color: rgba(24, 7, 43, 0.986);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     height: 100vh;
     margin: 0;
     color: white;
