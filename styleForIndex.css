@@ -8,7 +8,8 @@ body {
     color: white;
     font-family: Arial, sans-serif;
     opacity: 1;
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 1s ease-in-out forwards;
+
 }
 
 @keyframes fadeIn {
@@ -32,19 +33,23 @@ body {
     color: #ffd700;
 }
 
-.movie-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 20px;
+.movie-list a {
+    text-decoration: none; /* ลบเส้นขีดใต้ */
+    color: inherit; /* ใช้สีของตัวอักษรจาก parent */
 }
 
-.movie-list .movie-card:hover {
-    cursor: pointer;
-    transform: scale(1);
-    filter: brightness(0.9);
+.movie-list {
+    display: flex;
+    flex-wrap: nowrap; /* ปรับให้ไม่พับแถว */
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 20px;
+    overflow-x: auto; /* เพิ่มการเลื่อนในแนวนอน */
+    white-space: nowrap; /* ป้องกันการพับแถว */
+    scroll-snap-type: x mandatory; /* ให้การเลื่อนติดๆ กัน */
 }
+
+
 .movie-card {
     background-color: #222;
     border-radius: 8px;
@@ -53,6 +58,14 @@ body {
     padding-bottom: 10px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, filter 0.3s;
+    scroll-snap-align: start; /* ให้การเลื่อนติดอยู่ที่การ์ดแรก */
+}
+
+.movie-card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .movie-card img {
@@ -66,17 +79,17 @@ body {
     margin-top: 10px;
 }
 
-.movie-info p {
+.movie-info p, .movie-info h2 {
     text-align: left;
     padding-left: 10px;
     font-size: 14px;
+}
+
+.movie-info p {
     color: #ffd700;
 }
 
 .movie-info h2 {
-    text-align: left;
-    padding-left: 10px;
-    font-size: 14px;
     color: #fff;
 }
 
@@ -94,8 +107,9 @@ body {
     padding: 10px;
     text-decoration: none;
     width: 35%;
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
+    transition: background-color 0.3s;
 }
 
 .watchlist-btn:hover, .trailer-btn:hover {
@@ -106,10 +120,37 @@ body {
     color: rgb(0, 153, 255);
     margin-right: 5px;
 }
+
 .play-icon {
     margin-right: 5px;
 }
 
 button:focus {
     outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .movie-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .movie-card img {
+        height: auto;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .watchlist-btn, .trailer-btn {
+        width: 80%;
+        font-size: 14px;
+    }
 }
