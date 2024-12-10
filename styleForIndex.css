@@ -30,6 +30,7 @@ body {
 .header h1 {
     font-size: 32px;
     font-weight: bold;
+    text-align: center;
     color: #ffd700;
 }
 
@@ -40,15 +41,16 @@ body {
 
 .movie-list {
     display: flex;
-    flex-wrap: nowrap; /* ปรับให้ไม่พับแถว */
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center; /* จัดกลางการ์ดในแนวนอน */
+    align-items: center; /* จัดกลางการ์ดในแนวตั้ง */
     gap: 10px;
     padding: 20px;
-    overflow-x: auto; /* เพิ่มการเลื่อนในแนวนอน */
-    white-space: nowrap; /* ป้องกันการพับแถว */
-    scroll-snap-type: x mandatory; /* ให้การเลื่อนติดๆ กัน */
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    width: 100%;
 }
-
 
 .movie-card {
     background-color: #222;
@@ -59,13 +61,7 @@ body {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, filter 0.3s;
-    scroll-snap-align: start; /* ให้การเลื่อนติดอยู่ที่การ์ดแรก */
-}
-
-.movie-card:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    filter: brightness(1.1);
+    scroll-snap-align: start;
 }
 
 .movie-card img {
@@ -73,6 +69,12 @@ body {
     height: 300px;
     object-fit: cover;
     border-radius: 8px;
+}
+
+.movie-card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 .movie-info {
@@ -96,6 +98,7 @@ body {
 .buttons {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-top: 10px;
 }
 
@@ -137,7 +140,12 @@ button:focus {
 
     .movie-card {
         width: 100%;
-        max-width: 320px;
+        max-width: 320px; /* จำกัดความกว้างให้กับการ์ดในจอเล็ก */
+    }
+
+    .movie-list {
+        flex-direction: row; /* ให้การ์ดแสดงในแถวเดียวกัน */
+        justify-content: center; /* จัดการ์ดให้ตรงกลางในแนวนอน */
     }
 
     .movie-card img {
